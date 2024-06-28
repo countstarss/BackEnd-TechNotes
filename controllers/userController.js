@@ -71,7 +71,7 @@ const updateUser = asyncHandler(async (req,res) => {
     // ? ? ? 复习 lean() 和 exec()
     const duplicate = await User.findOne({ username }).lean().exec()
 
-    if (duplicate && duplicate?._id.toString() !== id){
+    if (duplicate && duplicate?._id.toString() === id){
         return res.status(409).json({message:"duplicate username"})
     }
 

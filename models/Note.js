@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 // 添加一个第三方库，让ticket有一个类似MySQL自增长的功能
 const AutoIncrement = require('mongoose-sequence')(mongoose)
 
+
 const noteSchema = new mongoose.Schema({
     user: {
         type:mongoose.Schema.Types.ObjectId,
@@ -14,11 +15,11 @@ const noteSchema = new mongoose.Schema({
     },
     text: {
         type:String,
-        require:true
+        default:"Default String"
     },
     completed: {
         type:Boolean,
-        default:false
+        default:true
     },
     createdAt:{
         type:Date,
