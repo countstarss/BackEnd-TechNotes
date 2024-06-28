@@ -35,9 +35,10 @@ const noteSchema = new mongoose.Schema({
 
 // 添加自增长插件
 noteSchema.plugin(AutoIncrement,{
+    // ? ? ? 
     inc_field:'ticket',
     id:"ticketNums",
     start_seq: 500 // 从500开始计数
 })
 
-module.exports = mongoose.model('User',noteSchema)
+module.exports = mongoose.model('Note',noteSchema)
